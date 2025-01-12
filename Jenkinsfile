@@ -9,55 +9,32 @@ pipeline {
             parallel {
                 stage('Slave 1') {
                     agent {
-                        label "Agent2_1"
+                        label "Agent1_1"
                     }
                     steps {
-                        git url: 'https://github.com/RodrigoUdemy/Paralelo_pipline.git'
+                        git url: 'https://github.com/eduardoseijas/Integracion.git'
                         bat 'npm install'
                         bat 'npm update'                       
-                        bat 'npx cypress run cypress run --record --key 7f3ad08e-6c6e-442f-bcbd-cb3269ac5a9c  --parallel'
+                        bat 'npx cypress run cypress run --record --key 68a58e64-711c-452e-bfcc-05c2d7e4ba14  --parallel'
                     
                     }
                 }
 
                 stage('Slave 2') {
                     agent {
-                        label "Agent2_2"
+                        label "Agent1_2"
                     }
                     steps {
-                        git url: 'https://github.com/RodrigoUdemy/Paralelo_pipline.git'
+                        git url: 'https://github.com/eduardoseijas/Integracion.git'
                         bat 'npm install'
                         bat 'npm update'                       
-                        bat 'npx cypress run cypress run --record --key 7f3ad08e-6c6e-442f-bcbd-cb3269ac5a9c  --parallel'
+                        bat 'npx cypress run cypress run --record --key 68a58e64-711c-452e-bfcc-05c2d7e4ba14  --parallel'
                     
                     }
                 }
 
-                stage('Slave 3') {
-                    agent {
-                        label "Agent2_3"
-                    }
-                    steps {
-                        git url: 'https://github.com/RodrigoUdemy/Paralelo_pipline.git'
-                        bat 'npm install'
-                        bat 'npm update'                       
-                        bat 'npx cypress run cypress run --record --key 7f3ad08e-6c6e-442f-bcbd-cb3269ac5a9c  --parallel'
-                    
-                    }
-                }
-
-                stage('Slave 4') {
-                    agent {
-                        label "Agent2_4"
-                    }
-                    steps {
-                        git url: 'https://github.com/RodrigoUdemy/Paralelo_pipline.git'
-                        bat 'npm install'
-                        bat 'npm update'                       
-                        bat 'npx cypress run cypress run --record --key 7f3ad08e-6c6e-442f-bcbd-cb3269ac5a9c  --parallel'
-                    
-                    }
-                }
+                
+               
 
                
 
